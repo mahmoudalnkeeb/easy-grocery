@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>Create Grocery List</title>
+  </head>
+  <body>
+    <div class="main">
+      <span class="error-message" id="error"> </span>
+      <span class="success-message" id="success"></span>
+      <h1>Add Groceries <span class="note">(comma separated)</span></h1>
+      <div class="form">
+        <input
+          type="text"
+          id="highPriorityInput"
+          placeholder="High priority: Milk,Eggs,Vegetables"
+          autocomplete="off"
+        />
+
+        <input
+          type="text"
+          id="mediumPriorityInput"
+          placeholder="Medium priority: Bread,Cheese,Fruit"
+          autocomplete="off"
+        />
+
+        <input
+          type="text"
+          id="lowPriorityInput"
+          placeholder="Low priority: Cereal,Chips,Juice"
+          autocomplete="off"
+        />
+
+        <button id="createListBtn">Create List</button>
+      </div>
+      <div class="result">
+        <input
+          type="text"
+          class="result-input"
+          id="resultInput"
+          placeholder="Your list URL will appear here - Note: click to copy!"
+          autocomplete="off"
+          readonly
+        />
+      </div>
+    </div>
+    <script src="./js/create-list.js"></script>
+  </body>
+</html>

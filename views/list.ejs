@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/list.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>View Grocery List</title>
+  </head>
+
+  <body>
+    <div class="groceries">
+      <div class="grocery-section" id="highPrioritySection">
+        <h2>High Priority</h2>
+        <ul class="groceryList" id="highPriorityList">
+          <% essentials.forEach(item => { %> <% const itemId = item.split(" ").join("_"); %>
+          <li class="grocery-item">
+            <label for="<%= itemId %>" class="custom-checkbox">
+              <input autocomplete="off" type="checkbox" id="<%= itemId %>" />
+              <span class="checkmark"></span>
+              <%= item %>
+            </label>
+          </li>
+          <% }); %>
+        </ul>
+      </div>
+
+      <div class="grocery-section" id="mediumPrioritySection">
+        <h2>Medium Priority</h2>
+        <ul class="groceryList" id="mediumPriorityList">
+          <% less_essentials.forEach(item => { %> <% const itemId = item.split(" ").join("_"); %>
+          <li class="grocery-item">
+            <label for="<%= itemId %>" class="custom-checkbox">
+              <input autocomplete="off" type="checkbox" id="<%= itemId %>" />
+              <span class="checkmark"></span>
+              <%= item %>
+            </label>
+          </li>
+          <% }); %>
+        </ul>
+      </div>
+
+      <div class="grocery-section" id="lowPrioritySection">
+        <h2>Low Priority</h2>
+        <ul class="groceryList" id="lowPriorityList">
+          <% non_essentials.forEach(item => { %> <% const itemId = item.split(" ").join("_"); %>
+          <li class="grocery-item">
+            <label for="<%= itemId %>" class="custom-checkbox">
+              <input autocomplete="off" type="checkbox" id="<%= itemId %>" />
+              <span class="checkmark"></span>
+              <%= item %>
+            </label>
+          </li>
+          <% }); %>
+        </ul>
+      </div>
+    </div>
+
+    <script src="./js/view-list.js"></script>
+  </body>
+</html>
